@@ -1,0 +1,17 @@
+{
+  "name": "admin-hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev:web-vue": "pnpm --filter web-vue dev",
+    "lint:web-vue": "pnpm --filter web-vue lint",
+    "lint:web-vue-fix": "pnpm --filter web-vue lint:fix",
+    "dev:backend":"pnpm --filter backend start:dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

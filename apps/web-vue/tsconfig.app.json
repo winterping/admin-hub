@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", //指定 TypeScript 增量编译的缓存文件路径
+    "target": "ES2020", //设置编译后生成的 JavaScript 的目标语言版本。
+    "useDefineForClassFields": true, //类字段将使用 ECMAScript 标准的 defineProperty 方法定义
+    "module": "ESNext", //设置模块的生成格式。ESNext，保留 import 和 export 语句以供现代工具链（如 Vite）处理。
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], //指定项目支持的库环境。
+    "skipLibCheck": true, //跳过类型声明文件（*.d.ts）的类型检查。
+    "types": ["vite/client","element-plus/global"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"] // 配置 @ 别名
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "Bundler", //指定模块解析策略。
+    "allowImportingTsExtensions": true, //允许导入文件时包含 .ts 扩展名。
+    "isolatedModules": true, //确保每个文件独立处理，不依赖项目范围的类型信息。
+    "moduleDetection": "force", //强制要求模块显式使用 import 或 export，否则被视为脚本文件。
+    "noEmit": true, //禁用 TypeScript 的输出操作。
+    "jsx": "preserve", //保留 JSX 语法，交由工具链（如 Babel 或 ESBuild）处理。
+
+    /* Linting */
+    // "strict": true, //启用所有严格模式检查。
+    "noUnusedLocals": true, //禁止未使用的局部变量和函数参数。
+    "noUnusedParameters": true, //禁止未使用的局部变量和函数参数。
+    "noFallthroughCasesInSwitch": true, //防止 switch 语句中的无意贯穿（fallthrough）。
+    "noUncheckedSideEffectImports": true //防止导入仅为副作用的模块（如 import './side-effect'）。
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+}
